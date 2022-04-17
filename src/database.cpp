@@ -10,7 +10,7 @@ void write_to_database(
 	for (const auto& object : data) {
 		out
 			<< object.source_file << ";"
-			<< (object.type == ObjectData::Function ? "function" : "class   ") << ";"
+			<< (object.type == ObjectData::Function ? "function" : "class") << ";"
 			<< object.object_name << ";"
 			<< object.indent_begin << ";"
 			<< object.indent_end << "\n"

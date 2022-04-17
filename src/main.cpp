@@ -5,7 +5,6 @@
 
 #include "antlr4-runtime.h"
 #include "Python3Lexer.h"
-#include "Python3Parser.h"
 
 int main(int argc, char** argv) {
 	if (argc < 3) return 0;
@@ -14,6 +13,7 @@ int main(int argc, char** argv) {
 		std::ifstream stream(argv[i]);
 		if (stream.bad()) {
 			std::cout << "can't open file `" << argv[i] << "`\n";
+			continue;
 		}
 		antlr4::ANTLRInputStream input(stream);
 		Python3Lexer lexer(&input);
@@ -22,15 +22,6 @@ int main(int argc, char** argv) {
 		auto* tree = parser.file_input();
 		visitor.set_filename(argv[i]);
 		visitor.visitFile_input(tree);
-	}
-	for (const auto& object : visitor.get_data()) {
-		std::cout
-			<< object.source_file << "\t"
-			<< (object.type == ObjectData::Function ? "function" : "class   ") << "\t"
-			<< object.object_name << "\t"
-			<< object.indent_begin << "\t"
-			<< object.indent_end << "\n"
-			;
 	}
 	write_to_database(argv[1], visitor.get_data());
 }

@@ -8,8 +8,9 @@
 #include "Python3Parser.h"
 
 int main(int argc, char** argv) {
+	if (argc < 3) return 0;
 	Visitor visitor;
-	for (int i = 1; i < argc; ++i) {
+	for (int i = 2; i < argc; ++i) {
 		std::ifstream stream(argv[i]);
 		if (stream.bad()) {
 			std::cout << "can't open file `" << argv[i] << "`\n";
@@ -31,5 +32,5 @@ int main(int argc, char** argv) {
 			<< object.indent_end << "\n"
 			;
 	}
-	write_to_database("output.xml", visitor.get_data());
+	write_to_database(argv[1], visitor.get_data());
 }

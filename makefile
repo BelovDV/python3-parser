@@ -1,4 +1,4 @@
-INPUT_FILES = example/input.py example/second.py example/simple.py
+INPUT_FILES = tmp/output.csv example/input.py example/second.py example/simple.py
 
 all:
 

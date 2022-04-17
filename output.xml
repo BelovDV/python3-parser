@@ -1,9 +1,0 @@
-Filename;Type;Name;Line begin;Line end
-example/input.py;class   ;Player;9;15
-example/input.py;function;update;17;26
-example/input.py;class   ;Enemy;29;48
-example/second.py;function;add;3;5
-example/second.py;function;subtract;6;8
-example/second.py;function;multiply;9;11
-example/second.py;function;divide;12;14
-example/simple.py;function;add;3;5

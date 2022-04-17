@@ -23,3 +23,6 @@ antlrcpp::Any Visitor::visitClassdef(Python3Parser::ClassdefContext* ctx) {
 	);
 	return nullptr;
 }
+
+// maybe, there should be another function, which returns nullptr
+// but I'm bad with Python

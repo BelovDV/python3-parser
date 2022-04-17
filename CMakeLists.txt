@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 11)
 file(GLOB DU_SRC "tmp/antlr/*.cpp")
 message(STATUS "DU_SRC: ${DU_SRC}")
 
-add_executable(antlr_python_parser src/main.cpp ${DU_SRC})
+add_executable(antlr_python_parser src/main.cpp src/visitor.cpp ${DU_SRC})
 
 target_include_directories(antlr_python_parser PUBLIC tmp/antlr)
 
